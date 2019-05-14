@@ -1,0 +1,58 @@
+.hand{
+    padding: 50px;
+}
+
+.buttons{
+    /* text-align: center; */
+}
+
+#table{
+    border-width: 8px !important;
+    border-radius: 25px !important;
+    margin-top: 50px;
+    padding: 80px;
+    display: block;
+}
+
+hr{
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hand{
+    padding: 10px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.hand img{
+    width: 90px;
+    display: block;
+    float: left;
+    margin-left: 5px;
+}
+
+#deal-button{
+    display:inline-block;
+}
+
+#hit-button{
+    display: none;
+}
+
+#stand-button{
+    display: none;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+#message{
+    display: none;
+    font-size: 1.5rem;
+}
+
+#mainContainer{
+    justify-content: space-evenly;
+    align-items: center;
+}
