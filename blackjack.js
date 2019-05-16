@@ -6,6 +6,7 @@ var dHand = [];
 var pHand = [];
 
 var backCard = "";
+var backToggle = 0;
 var suits = ["hearts", "diamonds", "clubs", "spades"];
 // make 13 cards for each
 // one loop monitors which suit, another loop for each card
@@ -123,6 +124,7 @@ function displayCards(){
                 dealerHand.appendChild(img);
             } else {
                 backCard = dHand[i].imgURL;
+                backToggle = 1;
                 var img = document.createElement('img');
                 img.setAttribute('src', "images/cardBack.png");
                 img.setAttribute('id', "backcard");
@@ -203,11 +205,16 @@ function stand(){
 
 function calculatePointsDealer(){
     var totalD = 0;
-    for(i = 0; i < dHand.length; i++){
-        totalD += dHand[i].points;
-        // If src = back card, display totalD - previous cards points
-        if(dHand)
+    if(backToggle == 1){
+        totalD = dHand[0].points;
         dealerPoints.innerHTML = totalD;
+        backToggle = 0;
+    } else {
+        for(i = 0; i < dHand.length; i++){
+            totalD += dHand[i].points;
+            // If src = back card, display totalD - previous cards points
+            dealerPoints.innerHTML = totalD;
+        }
     }
     return totalD
 }
