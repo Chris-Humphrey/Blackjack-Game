@@ -5,6 +5,7 @@ var deck = [];
 var dHand = [];
 var pHand = [];
 
+var backCard = "";
 var suits = ["hearts", "diamonds", "clubs", "spades"];
 // make 13 cards for each
 // one loop monitors which suit, another loop for each card
@@ -116,9 +117,17 @@ function dealHand(){
 function displayCards(){
     if(pHand.length < 3){
         for(let i = 0; i < dHand.length; i++){
-            var img = document.createElement('img');
-            img.setAttribute('src', dHand[i].imgURL);
-            dealerHand.appendChild(img);
+            if(i == 0){
+                var img = document.createElement('img');
+                img.setAttribute('src', dHand[i].imgURL);
+                dealerHand.appendChild(img);
+            } else {
+                backCard = dHand[i].imgURL;
+                var img = document.createElement('img');
+                img.setAttribute('src', "images/cardBack.png");
+                img.setAttribute('id', "backcard");
+                dealerHand.appendChild(img);
+            }
         }
         for(let i = 0; i < pHand.length; i++){
             var img = document.createElement('img');
@@ -154,8 +163,7 @@ function score(){
         message.setAttribute('style', 'display: inline-block');
         message.innerText = "Dealer wins...";
         dealButton.setAttribute('style', "display: inline-block");
-    }
-    else {
+    } else {
         hitButton.setAttribute('style', "display: none");
         standButton.setAttribute('style', "display: none");
         message.setAttribute('style', 'display: inline-block');
@@ -181,6 +189,9 @@ function hit(){
 
 function stand(){
     while(calculatePointsDealer() < 17){
+        var replace = document.getElementById('backcard');
+        replace.setAttribute('src', backCard);
+        dealerHand.appendChild(replace);
         dHand.push(deck.pop());
         var img = document.createElement('img');
         i = dHand.length - 1;
@@ -194,6 +205,8 @@ function calculatePointsDealer(){
     var totalD = 0;
     for(i = 0; i < dHand.length; i++){
         totalD += dHand[i].points;
+        // If src = back card, display totalD - previous cards points
+        if(dHand)
         dealerPoints.innerHTML = totalD;
     }
     return totalD
