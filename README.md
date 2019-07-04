@@ -26,11 +26,5 @@ To see the full code, please visit <a href="https://github.com/Chris-Humphrey/Bl
 <img src="images/GameWin.png" style="width= 30px">
 
 
-<h2>Video</h2>
-<a href="https://www.youtube.com/watch?v=mhv6lPAcnUA" target="_blank">See the demo of the game</a>
-
 <h2>Author</h2>
-Cantu, Melissa
-
-<h2>Acknowledgments</h2>
-I would like to thank Veronica Lino and our TA, Matthew Baxter for all the help on this project.
+Chris Humphrey
