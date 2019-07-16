@@ -1,6 +1,6 @@
-Live Link: https://chris-humphrey.github.io/Blackjack-Game/
-
 <h1>Blackjack Game</h1>
+
+Live Link: https://chris-humphrey.github.io/Blackjack-Game/
 
 <h2>Introduction</h2>
 This is a classic 21 Blackjack card game. The objective of this game is to beat the dealer, and it can be done with the following options:
